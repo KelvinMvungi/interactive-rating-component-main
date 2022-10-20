@@ -86,26 +86,47 @@ body {
     height: 35px;
     border-radius: 50%;
     background-color: rgb(62, 70, 89);
-    margin-right: 30px;
-    
+    margin-right: 35px; 
 }
 
-#button {
+#rates ol li:hover {
+    background-color: var(--Orange);
+    color: var(--White);
+    transition: all 0.25s ease-in-out;
+}
+
+#rates ol li:active {
+    background-color: var(--Light-Grey);
+    color: var(--White);
+}
+
+#button  {
     font-family: 'Overpass', sans-serif;
     color: var(--White);
-    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
     justify-content: center;
-    align-self: center;
     background-color: var(--Orange);
     border-radius: 30px;
 }
 
-#button p {
-    padding: 15px 120px;
-    font-weight: 700;
+#button:hover {
+    background-color: var(--White);
+    color: var(--Orange);
+    transition: all 0.25s ease-in-out;
 }
 
+#button:active {
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+}
 
+#button p {
+    padding: 15px 0;
+    font-weight: 700;
+}
 
 
 /* MOBILE FIRST APPROACH */
@@ -121,4 +142,35 @@ body {
         background-image: linear-gradient(180deg, rgb(46, 54, 65), rgb(32, 36, 42));
         border-radius: 12px;
     }
+
+    #button {
+    width: 320px;
+    margin-left: 25px;
+    }
+}
+
+
+/* DESKTOP APPROACH */
+
+@media (min-width: 601px) {
+    #container {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: linear-gradient(180deg, rgb(46, 54, 65), rgb(32, 36, 42));
+        border-radius: 12px;
+    }
+
+    #rates ol li {
+        margin-right: 40px;
+    }
+
+    #button {
+        width: 350px;
+        margin-left: 25px;
+        }
+
 }
