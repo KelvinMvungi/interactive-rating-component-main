@@ -16,7 +16,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Overpass', sans-serif;
-    color: var(--White);
 }
 
 html, body {
@@ -86,18 +85,26 @@ body {
     align-items: center;
     width: 35px;
     height: 35px;
+    padding-top: 3.5px;
     border-radius: 50%;
     background-color: rgb(62, 70, 89);
     margin-right: 35px; 
-}
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+} 
 
 #rates ol li:hover {
     background-color: var(--Orange);
     color: var(--White);
-    transition: all 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
-#rates ol li:active {
+#rates ol li:focus {
+    background-color: var(--Light-Grey);
+    color: var(--White);
+}
+
+.rate-selected {
     background-color: var(--Light-Grey);
     color: var(--White);
 }
@@ -112,12 +119,14 @@ body {
     justify-content: center;
     background-color: var(--Orange);
     border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 #button:hover {
     background-color: var(--White);
     color: var(--Orange);
-    transition: all 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 #button:active {
@@ -128,6 +137,7 @@ body {
 #button p {
     padding: 15px 0;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 #image img {
@@ -136,7 +146,7 @@ body {
 
 #selected {
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,24 +155,38 @@ body {
 #selected p {
     background-color: rgb(61, 70, 89);
     border-radius: 20px;
-    padding: 8px 12px;
+
+    padding: 11px 12px 8px 12px;
     font-size: 15px;
     color: var(--Orange);
 }
 
 #message h1 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: var(--White);
 }
 
 #message p {
     color: var(--Light-Grey);
 }
 
+.msgContainer {
+    visibility: hidden;
+}
+
+.popMsgContainer {
+    visibility: visible;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 
 /* MOBILE FIRST APPROACH */
 
 @media (max-width: 600px) {
-    #container {
+    .container {
         width: 370px;
         display: flex;
         flex-wrap: wrap;
@@ -178,7 +202,7 @@ body {
     margin-left: 25px;
     }
 
-    #msgContainer {
+    .msgContainer {
         width: 370px;
         height: 398.2px;
         background-image: linear-gradient(180deg, rgb(46, 54, 65), rgb(32, 36, 42));
@@ -196,7 +220,7 @@ body {
 /* DESKTOP APPROACH */
 
 @media (min-width: 601px) {
-    #container {
+    .container {
         width: 400px;
         display: flex;
         flex-wrap: wrap;
@@ -214,18 +238,18 @@ body {
     #button {
         width: 350px;
         margin-left: 25px;
-        }
+    }
 
-        #msgContainer {
-            width: 400px;
-            height: 398.2px;
-            background-image: linear-gradient(180deg, rgb(46, 54, 65), rgb(32, 36, 42));
-            border-radius: 12px; 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            padding: 30px 30px 30px;
-        } 
+    .msgContainer {
+        width: 400px;
+        height: 398.2px;
+        background-image: linear-gradient(180deg, rgb(46, 54, 65), rgb(32, 36, 42));
+        border-radius: 12px; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 30px 30px 30px;    
+    } 
 }

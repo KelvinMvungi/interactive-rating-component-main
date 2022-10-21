@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <div id="container">
+        <div class="container">
             <div id="star">
                 <img src="images/icon-star.svg" alt="a star">
             </div>
@@ -27,18 +27,18 @@
                     <li>5</li>
                 </ol>
             </div>
-            <div id="button">
+            <div id="button" onclick="showPop()">
                 <p>SUBMIT</p>
             </div>
         </div>
     </main>
     <section>
-        <div id="msgContainer">
+        <div class="msgContainer" id="pop">
             <div id="image">
                 <img src="images/illustration-thank-you.svg" alt="a thank you illustration">
             </div>
             <div id="selected">
-                <p>You selected 4 out of 5</p>
+                <p>You have selected <span id="rating"></span> out of 5</p>
             </div>
             <div id="message">
                 <h1>Thank you!</h1>
@@ -46,5 +46,8 @@
             </div>
         </div>
     </section>
+
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
